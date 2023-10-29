@@ -1,12 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './modules/dashboard/components/dashboard/dashboard.component';
 
 export const app_routes: Routes = [
   {
     path: '',
-    component: DashboardComponent
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.module')
+    .then((m) => m.DashboardModule)
   },
+  {
+    path: 'receitas',
+    loadChildren: () =>
+      import('./modules/receitas/receitas.module')
+    .then((m) => m.ReceitasModule)
+  },
+  {
+    path: 'despesas',
+    loadChildren: () =>
+      import('./modules/despesas/despesas.module')
+    .then((m) => m.DespesasModule)
+  }
 ];
 
 @NgModule({

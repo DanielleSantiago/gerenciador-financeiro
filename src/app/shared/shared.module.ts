@@ -11,12 +11,16 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { BodyComponent } from './components/body/body.component';
+import { DateCarouselComponent } from './components/date-carousel/date-carousel.component';
 
 @NgModule({
   declarations: [
     SidebarComponent,
     HeaderComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    BodyComponent,
+    DateCarouselComponent
   ],
   imports: [
     CommonModule,
@@ -28,10 +32,12 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     MatButtonModule,
     MatSidenavModule,
     MatCheckboxModule,
-    MatListModule
+    MatListModule,
+
   ],
   exports: [
-    SidebarComponent
+    SidebarComponent,
+    DateCarouselComponent
   ]
 })
 export class SharedModule {
